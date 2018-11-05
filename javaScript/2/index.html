@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="hphk"> AAA </h1>
+
+    <div>
+        <a href="#" id='a'>Who said that </a>
+    </div>
+
+    <div>
+        <a href="#" id='b'>'Said what? </a>
+    </div>
+
+    <script>
+        const h1 = document.querySelector('#hphk');
+        const anchor1 = document.querySelector('#a');
+        var anchor2 = document.querySelector('#b');
+
+        anchor1.addEventListener('click', () =>  {
+            h1.innerHTML = 'Richard Stallman';
+        })
+
+        anchor2.addEventListener('click', () => {
+            h1.innerHTML = 'Happy Haking';
+        })
+    </script>
+
+
+</body>
+
+</html>
