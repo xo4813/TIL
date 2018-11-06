@@ -21,6 +21,15 @@ inputArea.addEventListener('keyup', (event) => {
     }
 });
 
+//  시작시
+document.addEventListener('DOMContentLoaded', () => {
+
+    const names = ['개','고양이','사자','호랑이'];
+    const 
+    const tvArea = document.querySelector('#js-tv-area');
+    let URL = `https://api.giphy.com/v1/gifs/search?q=${keyword}&api_key=${api_key}&limit=1`;
+
+})
 
 const getData = (keyword) => {
     let URL = `https://api.giphy.com/v1/gifs/search?q=${keyword}&api_key=${api_key}&limit=1`;
@@ -41,8 +50,8 @@ const getData = (keyword) => {
 const pushToDOM = (paredData) => {
     const resultArea = document.querySelector('#result-area');
     const DataSet = paredData.data;
-    
-    resultArea.innerHTML ="";
+
+    resultArea.innerHTML = "";
     DataSet.forEach((imgData) => {
         let imgURL = imgData.images.fixed_height.url;
         let imgTitle = imgData.title;
