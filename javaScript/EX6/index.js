@@ -22,7 +22,7 @@ function add (number){
     sum += number;
 }
 
-number.forEach(add);
+numbers.forEach(add);
 
 // ex 
 console.log(sum);
