@@ -52,3 +52,5 @@ var requests = [
 var inProgress = requests.some(function(request){
     return user.status == 'pending';
 });
+
+
