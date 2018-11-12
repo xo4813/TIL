@@ -1,5 +1,8 @@
-debug =require('debug')('app:startup');
-dbDebugger =require('debug')('app:db');
+const movies = require("./routes/movies");
+const home = require("./routes/home");
+
+const debug =require('debug')('app:startup');
+const dbDebugger =require('debug')('app:db');
 const morgan =require('morgan');
 const helmet = require('helmet');
 //export <변수명> = <value>
@@ -10,15 +13,11 @@ const express = require('express');
 
 const app = express();
 
-
-
 console.log(`Node_env: ${process.env.NODE_ENV}`)
 console.log(app.get('env'));
 console.log(app.get('debug'));
 
-
 app.set('view engin', 'pug');
-
 app.set('views', './views');
 
 app.use(helmet());
@@ -42,27 +41,8 @@ app.use(express.static('public'));
 
 app.use(logger);
 app.use(auth);
-
-app.get('/',(req,res) => {
-    res.render('index',{
-        title: 'HappyHacking',
-        gretting: 'May you Happy Hacking'
-    })
-})
-
-
-// next : 다음 미들웨어로 넘어간다. 
-app.use(function (req, res, next) {
-    console.log('모든 요청이 올때마다 로그를 남깁니다.')
-
-    next();
-}
-);
-
-app.use(function (req, res, next) {
-    console.log('사용자 인증을 진행중입니다 ...');
-    next();
-})
+app.use(movies);
+app.use(home);
 
 const port = process.env.port || 3000;
 
