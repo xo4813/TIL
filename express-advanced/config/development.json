@@ -1,0 +1,6 @@
+{
+  "name": "Advanced Express APP = DEV",
+  "DB": {
+    "host": "https://123.123.123.123./prod-mail-sever"
+  }
+}
